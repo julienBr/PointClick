@@ -5,8 +5,6 @@
 <h3 align="center"><u>Retrouver les 7 indices disséminés dans la pièce du crime</u></h3>
 <h3 align="center"><u>Résoudre l'énigme du Père Noël disparu</u></h3>
 
----
-
 <div align="justify">
     <h4><i>Globalité du Projet</i></h4>
     <p>
@@ -19,6 +17,4 @@
             - Terrain
     </p>
 </div>
-
----
 
