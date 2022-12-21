@@ -8,13 +8,16 @@
 <div align="justify">
 <h4><i>Globalité du Projet</i></h4>
 <p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ce Point & Click a été développé sur la base d'un jeu de style <i>"Aventure 2D"</i>.
-Pour celà, différentes étapes ont été respecté :  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ce Point & Click a été développé sur la base d'un jeu de style <i>"Aventure 2D"</i>.  
+Pour celà, différentes étapes ont été respecté :
+
 - Mise en place des différents Assets constituant la scène
-- Indices
-- Personnage
-- Background
-- Terrain
+  - Indices
+  - Personnage
+  - Background
+  - Terrain
+
+- 
 </p>
 </div>
 
