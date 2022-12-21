@@ -6,7 +6,7 @@
 <h3 align="center">Résoudre l'énigme du Père Noël disparu</h3>
 
 <div align="justify">
-<h4><u><i>Globalité du Projet</i></u></h4>
+<h4><u>Globalité du Projet</u></h4>
 <p>
 &nbsp;&nbsp;&nbsp;&nbsp;Ce Point & Click a été développé sur la base d'un jeu de style <i>"Aventure 2D"</i>.<br>
 Pour celà, différentes étapes ont été respecté :
