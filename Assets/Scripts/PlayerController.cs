@@ -2,20 +2,28 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private Vector2 mousPos;
     private Vector2 target;
     private Animator _animator;
-    [SerializeField] private float perspectiveScale = 0.09f;
-    [SerializeField] private float scaleRatio = 5f;
+    private float perspectiveScale = 0.05f;
+    private float scaleRatio = 7f;
+    private Vector3 _scale;
 
     private void Awake()
     {
         _animator = GetComponent<Animator>();
         target = new Vector2(transform.position.x, transform.position.y);
+        Vector3 _scale = transform.localScale;
     }
 
     private void Update()
     {
-        AdjustSize();
+        RescalePlayerDistance();
+        Walk();
+    }
+
+    private void Walk()
+    {
         Vector2 mousPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (Input.GetMouseButtonDown(0))
         {
@@ -27,14 +35,22 @@ public class PlayerController : MonoBehaviour
         if (transform.position.x == target.x && transform.position.y == target.y)
         {
             _animator.SetBool("Walk", false);
-        }// quand je touche un collider de mon mur, garder la position initial du player on colliderenter2d
+        }
     }
     
-    void AdjustSize()
+    private void RescalePlayerDistance()
     {
-        Vector3 scale = transform.localScale;
-        scale.x = perspectiveScale * (scaleRatio - transform.position.y);
-        scale.y = perspectiveScale * (scaleRatio - transform.position.y);
-        transform.localScale = scale;
+        _scale.x = perspectiveScale * (scaleRatio - transform.position.y);
+        _scale.y = perspectiveScale * (scaleRatio - transform.position.y);
+        transform.localScale = _scale;
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("BgCollider"))
+        {
+            target = new Vector2(transform.position.x, transform.position.y);
+            _animator.SetBool("Walk", false);
+        }
     }
 }
