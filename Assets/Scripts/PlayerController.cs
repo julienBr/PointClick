@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private float perspectiveScale = 0.05f;
     private float scaleRatio = 7f;
     private Vector3 _scale;
+    private MenuController _menuController;
 
     private void Awake()
     {
@@ -52,6 +53,14 @@ public class PlayerController : MonoBehaviour
         {
             target = new Vector2(transform.position.x, transform.position.y);
             _animator.SetBool("Walk", false);
+        }
+    }
+    
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("arrowTopToMiddle"))
+        {
+            _menuController.ChangeScene("2_Middle");
         }
     }
 }
