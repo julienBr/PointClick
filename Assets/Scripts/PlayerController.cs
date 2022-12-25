@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
     private float perspectiveScale = 0.05f;
     private float scaleRatio = 7f;
     private Vector3 _scale;
-    private MenuController _menuController;
 
     private void Awake()
     {
@@ -60,7 +59,7 @@ public class PlayerController : MonoBehaviour
     {
         if (col.gameObject.CompareTag("arrowTopToMiddle"))
         {
-            _menuController.ChangeScene("2_Middle");
+            GameObject.Find("GameManager").GetComponent<GameManager>().ChangeScene("3_Middle");
         }
     }
 }
