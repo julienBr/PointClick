@@ -33,7 +33,6 @@ public class PlayerController : MonoBehaviour
     {
         RescalePlayerDistance();
         Walk();
-        _agent.SetDestination(new Vector3(target.x, target.y, transform.position.z));
     }
 
     private void Walk()
@@ -46,6 +45,7 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("Walk", true);
         }
         transform.position = Vector2.MoveTowards(transform.position, target, Time.deltaTime * speed);
+        _agent.SetDestination(new Vector3(target.x, target.y, transform.position.z));
         if (transform.position.x == target.x && transform.position.y == target.y)
         {
             _animator.SetBool("Walk", false);
@@ -74,19 +74,20 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.CompareTag("arrowTopToMiddle"))
         {
             // Position on Start Top Middle Map
+            //transform. position=new Vector2(transform. position. x+distance,transform. position. y);
             target = new Vector2(4.608f, 3.102f);
             GameObject.Find("GameManager").GetComponent<GameManager>().ChangeScene("3_Middle");
         }
         if (col.gameObject.CompareTag("arrowMiddleToBottom"))
         {
             // Position on Start Top Bottom Map
-            target = new Vector2(6f, 1.3f);
+            target = new Vector2(4.789f, 4.643f);
             GameObject.Find("GameManager").GetComponent<GameManager>().ChangeScene("4_Bottom");
         }
         if (col.gameObject.CompareTag("arrowMiddleToTop"))
         {
             // Position on Start Bottom Top Map
-            target = new Vector2(6f, 1.3f);
+            target = new Vector2(6.039f, 0.315f);
             GameObject.Find("GameManager").GetComponent<GameManager>().ChangeScene("2_Top");
         }
         if (col.gameObject.CompareTag("arrowBottomToMiddle"))
