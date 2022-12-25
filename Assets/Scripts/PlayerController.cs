@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private GameObject player;
     private float speed = 1.5f;
     private Vector2 mousPos;
     private Vector2 target;
+    private Vector2 posStart = new (2.927f, 3.613f);
     private Animator _animator;
     private float perspectiveScale = 0.05f;
     private float scaleRatio = 7f;
@@ -12,8 +14,14 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        if (player != null)
+        {
+            Destroy(this);
+            return;
+        }
+        DontDestroyOnLoad(gameObject);
         _animator = GetComponent<Animator>();
-        target = new Vector2(transform.position.x, transform.position.y);
+        target = posStart;
         Vector3 _scale = transform.localScale;
     }
 
@@ -29,7 +37,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             GetComponent<SpriteRenderer>().flipX = mousPos.x <= target.x;
-            target = new Vector2(mousPos.x, mousPos.y);
+            target = mousPos;
             _animator.SetBool("Walk", true);
         }
         transform.position = Vector2.MoveTowards(transform.position, target, Time.deltaTime * speed);
@@ -60,6 +68,23 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.CompareTag("arrowTopToMiddle"))
         {
             GameObject.Find("GameManager").GetComponent<GameManager>().ChangeScene("3_Middle");
+            // Position on Start Top Middle Map
+            target = new Vector2(4.606f, 3.102f);
+        }
+        if (col.gameObject.CompareTag("arrowMiddleToBottom"))
+        {
+            GameObject.Find("GameManager").GetComponent<GameManager>().ChangeScene("4_Bottom");
+            // Position on Start Top Bottom Map
+        }
+        if (col.gameObject.CompareTag("arrowMiddleToTop"))
+        {
+            GameObject.Find("GameManager").GetComponent<GameManager>().ChangeScene("2_Top");
+            // Position on Start Bottom Top Map
+        }
+        if (col.gameObject.CompareTag("arrowBottomToMiddle"))
+        {
+            GameObject.Find("GameManager").GetComponent<GameManager>().ChangeScene("3_Middle");
+            // Position on Start Bottom Middle Map
         }
     }
 }

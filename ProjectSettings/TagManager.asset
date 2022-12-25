@@ -6,6 +6,9 @@ TagManager:
   tags:
   - BgCollider
   - arrowTopToMiddle
+  - arrowMiddleToBottom
+  - arrowMiddleToTop
+  - arrowBottomToMiddle
   layers:
   - Default
   - TransparentFX
