@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     private float speed = 1.5f;
     private Vector2 mousPos;
     private Vector2 target;
-    //private Vector2 posStart = new (2.927f, 3.613f);
     private Animator _animator;
     private float perspectiveScale = 0.05f;
     private float scaleRatio = 7f;
@@ -65,6 +64,7 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.CompareTag("BgCollider"))
         {
             target = transform.position;
+            _agent.SetDestination(new Vector3(transform.position.x, transform.position.y, transform.position.z));
             _animator.SetBool("Walk", false);
         }
     }
@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.CompareTag("arrowTopToMiddle"))
         {
             // Position on Start Top Middle Map
-            target = new Vector2(6f, 1.3f);
+            target = new Vector2(4.608f, 3.102f);
             GameObject.Find("GameManager").GetComponent<GameManager>().ChangeScene("3_Middle");
         }
         if (col.gameObject.CompareTag("arrowMiddleToBottom"))
@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.CompareTag("arrowBottomToMiddle"))
         {
             // Position on Start Bottom Middle Map
-            target = new Vector2(6f, 1.3f);
+            target = new Vector2(6.048f, 0.315f);
             GameObject.Find("GameManager").GetComponent<GameManager>().ChangeScene("3_Middle");
         }
     }
