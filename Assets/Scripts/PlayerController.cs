@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
     private static PlayerController _playerController;
+    private NavMeshAgent _agent;
     private float speed = 1.5f;
     private Vector2 mousPos;
     private Vector2 target;
@@ -23,12 +25,16 @@ public class PlayerController : MonoBehaviour
         _animator = GetComponent<Animator>();
         target = transform.position;
         Vector3 _scale = transform.localScale;
+        _agent = GetComponent<NavMeshAgent>();
+        _agent.updateRotation = false;
+        _agent.updateUpAxis = false;
     }
 
     private void Update()
     {
         RescalePlayerDistance();
         Walk();
+        _agent.SetDestination(new Vector3(target.x, target.y, transform.position.z));
     }
 
     private void Walk()
@@ -68,23 +74,26 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.CompareTag("arrowTopToMiddle"))
         {
             // Position on Start Top Middle Map
-            //transform.position = new Vector2(4.606f, 3.102f);
+            target = new Vector2(6f, 1.3f);
             GameObject.Find("GameManager").GetComponent<GameManager>().ChangeScene("3_Middle");
         }
         if (col.gameObject.CompareTag("arrowMiddleToBottom"))
         {
-            GameObject.Find("GameManager").GetComponent<GameManager>().ChangeScene("4_Bottom");
             // Position on Start Top Bottom Map
+            target = new Vector2(6f, 1.3f);
+            GameObject.Find("GameManager").GetComponent<GameManager>().ChangeScene("4_Bottom");
         }
         if (col.gameObject.CompareTag("arrowMiddleToTop"))
         {
-            GameObject.Find("GameManager").GetComponent<GameManager>().ChangeScene("2_Top");
             // Position on Start Bottom Top Map
+            target = new Vector2(6f, 1.3f);
+            GameObject.Find("GameManager").GetComponent<GameManager>().ChangeScene("2_Top");
         }
         if (col.gameObject.CompareTag("arrowBottomToMiddle"))
         {
-            GameObject.Find("GameManager").GetComponent<GameManager>().ChangeScene("3_Middle");
             // Position on Start Bottom Middle Map
+            target = new Vector2(6f, 1.3f);
+            GameObject.Find("GameManager").GetComponent<GameManager>().ChangeScene("3_Middle");
         }
     }
 }
