@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
+    private static PlayerController _playerController;
     private float speed = 1.5f;
     private Vector2 mousPos;
     private Vector2 target;
-    private Vector2 posStart = new (2.927f, 3.613f);
+    //private Vector2 posStart = new (2.927f, 3.613f);
     private Animator _animator;
     private float perspectiveScale = 0.05f;
     private float scaleRatio = 7f;
@@ -14,14 +14,14 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        if (player != null)
+        if (!_playerController)
         {
-            Destroy(this);
-            return;
+            _playerController = this;
+            DontDestroyOnLoad(gameObject);
         }
-        DontDestroyOnLoad(gameObject);
+        else Destroy(gameObject);
         _animator = GetComponent<Animator>();
-        target = posStart;
+        target = transform.position;
         Vector3 _scale = transform.localScale;
     }
 
@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
     {
         if (col.gameObject.CompareTag("BgCollider"))
         {
-            target = new Vector2(transform.position.x, transform.position.y);
+            target = transform.position;
             _animator.SetBool("Walk", false);
         }
     }
@@ -67,9 +67,9 @@ public class PlayerController : MonoBehaviour
     {
         if (col.gameObject.CompareTag("arrowTopToMiddle"))
         {
-            GameObject.Find("GameManager").GetComponent<GameManager>().ChangeScene("3_Middle");
             // Position on Start Top Middle Map
-            target = new Vector2(4.606f, 3.102f);
+            //transform.position = new Vector2(4.606f, 3.102f);
+            GameObject.Find("GameManager").GetComponent<GameManager>().ChangeScene("3_Middle");
         }
         if (col.gameObject.CompareTag("arrowMiddleToBottom"))
         {
