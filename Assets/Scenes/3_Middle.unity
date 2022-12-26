@@ -739,7 +739,7 @@ GameObject:
   - component: {fileID: 1785412206}
   m_Layer: 0
   m_Name: 1
-  m_TagString: BgCollider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -856,7 +856,7 @@ GameObject:
   - component: {fileID: 1886169587}
   m_Layer: 0
   m_Name: 2
-  m_TagString: BgCollider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

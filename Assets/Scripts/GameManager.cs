@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
@@ -18,6 +19,14 @@ public class GameManager : MonoBehaviour
     public void ChangeScene(string _sceneName)
     {
         SceneManager.LoadScene(_sceneName);
+        StartCoroutine(SetActive(_sceneName));
+    }
+
+    private IEnumerator SetActive(string _sceneName)
+    {
+        yield return null;
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(_sceneName));
+        Debug.Log(SceneManager.GetActiveScene().name);
     }
     
     public void Restart()
