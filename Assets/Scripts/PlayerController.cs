@@ -1,12 +1,10 @@
 using System.Collections;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
-    //private static PlayerController _playerController;
+    private static PlayerController _playerController;
     private NavMeshAgent _agent;
     private float speed = 1.5f;
     private Vector2 mousPos;
@@ -16,7 +14,7 @@ public class PlayerController : MonoBehaviour
     private float scaleRatio = 7f;
     private Vector3 _scale;
     
-    private void Awake()
+    private void Start()
     {
         /*if (!_playerController)
         {
@@ -24,8 +22,8 @@ public class PlayerController : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
         else Destroy(gameObject);*/
+        //transform.position = GameObject.Find("SpawnManager").GetComponent<SpawnManager>().posPlayer;
         _animator = GetComponent<Animator>();
-        target = transform.position;
         Vector3 _scale = transform.localScale;
         _agent = GetComponent<NavMeshAgent>();
         _agent.updateRotation = false;
@@ -78,9 +76,8 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.CompareTag("arrowTopToMiddle"))
         {
             // Position on Start Top Middle Map
-            //transform.position = new Vector2(4.608f, 3.102f);
+            //target = new Vector2(4.608f, 3.102f);
             GameObject.Find("GameManager").GetComponent<GameManager>().ChangeScene("3_Middle");
-            Instantiate(player, new Vector2(4.608f, 3.102f), quaternion.identity);
         }
         if (col.gameObject.CompareTag("arrowMiddleToBottom"))
         {

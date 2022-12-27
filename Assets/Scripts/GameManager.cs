@@ -26,7 +26,6 @@ public class GameManager : MonoBehaviour
     {
         yield return null;
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(_sceneName));
-        Debug.Log(SceneManager.GetActiveScene().name);
     }
     
     public void Restart()
