@@ -4,7 +4,8 @@ using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
-    private static PlayerController _playerController;
+    //private static PlayerController _playerController;
+    [SerializeField] private SpawnManager spawn;
     private NavMeshAgent _agent;
     private float speed = 1.5f;
     private Vector2 mousPos;
@@ -22,12 +23,12 @@ public class PlayerController : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
         else Destroy(gameObject);*/
-        //transform.position = GameObject.Find("SpawnManager").GetComponent<SpawnManager>().posPlayer;
         _animator = GetComponent<Animator>();
         Vector3 _scale = transform.localScale;
         _agent = GetComponent<NavMeshAgent>();
         _agent.updateRotation = false;
         _agent.updateUpAxis = false;
+        transform.position = spawn.posPlayer;
     }
 
     private void Update()

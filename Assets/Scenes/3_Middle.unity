@@ -539,16 +539,24 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4487330274023228231, guid: b2390f990a2dc0a40a533c3a80e431c4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.19525
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487330274023228231, guid: b2390f990a2dc0a40a533c3a80e431c4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.19525
+      objectReference: {fileID: 0}
+    - target: {fileID: 4487330274023228231, guid: b2390f990a2dc0a40a533c3a80e431c4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.64
+      value: 4.61
       objectReference: {fileID: 0}
     - target: {fileID: 4487330274023228231, guid: b2390f990a2dc0a40a533c3a80e431c4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.9
+      value: 3.1
       objectReference: {fileID: 0}
     - target: {fileID: 4487330274023228231, guid: b2390f990a2dc0a40a533c3a80e431c4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.96
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4487330274023228231, guid: b2390f990a2dc0a40a533c3a80e431c4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -580,6 +588,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2390f990a2dc0a40a533c3a80e431c4, type: 3}
+--- !u!1 &973486341 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4487330274023228228, guid: b2390f990a2dc0a40a533c3a80e431c4, type: 3}
+  m_PrefabInstance: {fileID: 973486340}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1163575566
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,6 +688,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7986583145432762133, guid: e4b2bef4c5d4837478c59c825473e4f6, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 973486341}
     - target: {fileID: 7986583145432762138, guid: e4b2bef4c5d4837478c59c825473e4f6, type: 3}
       propertyPath: m_RootOrder
       value: 6
