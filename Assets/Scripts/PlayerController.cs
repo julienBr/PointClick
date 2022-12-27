@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
@@ -5,8 +6,6 @@ using UnityEngine.AI;
 public class PlayerController : MonoBehaviour
 {
     //private static PlayerController _playerController;
-    [SerializeField] private SpawnManager spawn;
-    private NavMeshAgent _agent;
     private float speed = 1.5f;
     private Vector2 mousPos;
     private Vector2 target;
@@ -15,7 +14,7 @@ public class PlayerController : MonoBehaviour
     private float scaleRatio = 7f;
     private Vector3 _scale;
     
-    private void Start()
+    private void Awake()
     {
         /*if (!_playerController)
         {
@@ -25,10 +24,6 @@ public class PlayerController : MonoBehaviour
         else Destroy(gameObject);*/
         _animator = GetComponent<Animator>();
         Vector3 _scale = transform.localScale;
-        _agent = GetComponent<NavMeshAgent>();
-        _agent.updateRotation = false;
-        _agent.updateUpAxis = false;
-        transform.position = spawn.posPlayer;
     }
 
     private void Update()
@@ -53,6 +48,14 @@ public class PlayerController : MonoBehaviour
         {
             _animator.SetBool("Walk", false);
         }*/
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("BgCollider"))
+        {
+            target = transform.position;
+        }
     }
 
     IEnumerator Move()
