@@ -4,17 +4,17 @@ using UnityEngine;
 public class GameUI : MonoBehaviour
 {
     private static GameUI _gameUI;
-    //[SerializeField] private PlayerController player;
     [SerializeField] private TMP_Text cluesFoundText;
     
     private void Awake()
     {
-        if (!_gameUI)
+        if (_gameUI != null && _gameUI != this)
         {
-            _gameUI = this;
-            DontDestroyOnLoad(gameObject);
+            Destroy(gameObject);
+            return;
         }
-        else Destroy(gameObject);
+        _gameUI = this;
+        DontDestroyOnLoad(this);
     }
 
     private void Update()

@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private float scaleRatio = 7f;
     private Vector3 _scale;
     public static int cluesFound;
+    private bool isHappy;
     
     private void Awake()
     {
@@ -28,7 +29,7 @@ public class PlayerController : MonoBehaviour
     private void Walk()
     {
         Vector2 mousPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !isHappy)
         {
             GetComponent<SpriteRenderer>().flipX = mousPos.x <= target.x;
             target = mousPos;
@@ -70,8 +71,18 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.CompareTag("arrowBottomToMiddle")) gameManager.ChangeScene("3_Middle");
         if (col.gameObject.CompareTag("Clue"))
         {
-            target = transform.position;
-            cluesFound += 1;
+            isHappy = true;
+            StartCoroutine(FoundClue());
         }
+    }
+
+    private IEnumerator FoundClue()
+    {
+        target = transform.position;
+        cluesFound += 1;
+        _animator.SetBool("Happy", true);
+        yield return new WaitForSeconds(3f);
+        _animator.SetBool("Happy", false);
+        isHappy = false;
     }
 }
