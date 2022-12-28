@@ -10,13 +10,12 @@ public enum PanelType
 
 public class MenuController : MonoBehaviour
 {
-    private GameManager manager;
+    [SerializeField] private GameManager manager;
     [SerializeField] private List<MenuPanel> panelsList = new();
     private Dictionary<PanelType, MenuPanel> panelsDictionary = new();
 
     private void Start()
     {
-        manager = GameManager.instance;
         foreach(MenuPanel _panel in panelsList)
         {
             if(_panel) panelsDictionary.Add(_panel.GetPanelType(), _panel);

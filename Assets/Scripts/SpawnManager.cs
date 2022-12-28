@@ -18,7 +18,6 @@ public class SpawnManager : MonoBehaviour
         {
             posPlayer = new Vector3(6.039f, 0.315f,0f);
             player.position = posPlayer;
-            Debug.Log(player.position);
         }
 
         if (currentScene == "3_Middle" && previousScene == "4_Bottom")

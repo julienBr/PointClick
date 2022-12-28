@@ -3,29 +3,18 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance { private set; get; }
-
-    private void Awake()
-    {
-        if (instance != null)
-        {
-            Destroy(this);
-            return;
-        }
-        instance = this;
-        DontDestroyOnLoad(gameObject);
-    }
+    [SerializeField] private FadeTransition fadeTransition;
 
     public void ChangeScene(string _sceneName)
     {
-        SceneManager.LoadScene(_sceneName);
-        StartCoroutine(SetActive(_sceneName));
+        StartCoroutine(LoadScene(_sceneName));
     }
 
-    private IEnumerator SetActive(string _sceneName)
+    private IEnumerator LoadScene(string _sceneName)
     {
-        yield return null;
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName(_sceneName));
+        fadeTransition.ThrowFade();
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene(_sceneName);
     }
     
     public void Restart()

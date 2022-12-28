@@ -1,10 +1,8 @@
-using System.Collections;
 using UnityEngine;
 
 public class FadeTransition : MonoBehaviour
 {
     private Animator animator;
-    private float transitionTime = 0.5f;
     private int nextScene;
 
     private void Awake()
@@ -12,14 +10,8 @@ public class FadeTransition : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    public void ThrowFadeOut()
-    {
-        StartCoroutine(FadeOut());
-    }
-
-    private IEnumerator FadeOut()
+    public void ThrowFade()
     {
         animator.SetTrigger("FadeOut");
-        yield return new WaitForSeconds(transitionTime);
     }
 }
