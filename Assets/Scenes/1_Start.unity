@@ -633,7 +633,7 @@ RectTransform:
   - {fileID: 1609298930}
   - {fileID: 645440368}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1050,7 +1050,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1262732396
 MonoBehaviour:
@@ -1219,7 +1219,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1289054016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11, y: 6.54, z: 0}
+  m_LocalPosition: {x: 11.05, y: 6.54, z: 0}
   m_LocalScale: {x: 1.03, y: 1.03, z: 1.03}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1719,7 +1719,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1677277422
 GameObject:
@@ -2270,6 +2270,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3273706646814857577, guid: 8a1c41e19e373fe4f961eee9d6e70478, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3273706646814857578, guid: 8a1c41e19e373fe4f961eee9d6e70478, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -2325,6 +2329,18 @@ PrefabInstance:
     - target: {fileID: 3273706647443163291, guid: 8a1c41e19e373fe4f961eee9d6e70478, type: 3}
       propertyPath: m_Name
       value: FadeManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273706647443163291, guid: 8a1c41e19e373fe4f961eee9d6e70478, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273706647443163291, guid: 8a1c41e19e373fe4f961eee9d6e70478, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273706647941041842, guid: 8a1c41e19e373fe4f961eee9d6e70478, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3273706646814857572, guid: 8a1c41e19e373fe4f961eee9d6e70478, type: 3}
