@@ -9,6 +9,7 @@ TagManager:
   - arrowMiddleToBottom
   - arrowMiddleToTop
   - arrowBottomToMiddle
+  - Clue
   layers:
   - Default
   - TransparentFX

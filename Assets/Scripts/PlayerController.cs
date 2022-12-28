@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //private static PlayerController _playerController;
+    [SerializeField] private GameManager gameManager;
     private float speed = 1.5f;
     private Vector2 mousPos;
     private Vector2 target;
@@ -11,15 +11,10 @@ public class PlayerController : MonoBehaviour
     private float perspectiveScale = 0.05f;
     private float scaleRatio = 7f;
     private Vector3 _scale;
+    public static int cluesFound;
     
     private void Awake()
     {
-        /*if (!_playerController)
-        {
-            _playerController = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else Destroy(gameObject);*/
         _animator = GetComponent<Animator>();
         Vector3 _scale = transform.localScale;
     }
@@ -40,12 +35,6 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("Walk", true);
             StartCoroutine(Move());
         }
-        //transform.position = Vector2.MoveTowards(transform.position, target, Time.deltaTime * speed);
-        //_agent.SetDestination(new Vector3(target.x, target.y, transform.position.z));
-        /*if (transform.position.x == target.x && transform.position.y == target.y)
-        {
-            _animator.SetBool("Walk", false);
-        }*/
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -75,29 +64,14 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("arrowTopToMiddle"))
+        if (col.gameObject.CompareTag("arrowTopToMiddle")) gameManager.ChangeScene("3_Middle");
+        if (col.gameObject.CompareTag("arrowMiddleToBottom")) gameManager.ChangeScene("4_Bottom");
+        if (col.gameObject.CompareTag("arrowMiddleToTop")) gameManager.ChangeScene("2_Top");
+        if (col.gameObject.CompareTag("arrowBottomToMiddle")) gameManager.ChangeScene("3_Middle");
+        if (col.gameObject.CompareTag("Clue"))
         {
-            // Position on Start Top Middle Map
-            //target = new Vector2(4.608f, 3.102f);
-            GameObject.Find("GameManager").GetComponent<GameManager>().ChangeScene("3_Middle");
-        }
-        if (col.gameObject.CompareTag("arrowMiddleToBottom"))
-        {
-            // Position on Start Top Bottom Map
-            //target = new Vector2(4.789f, 4.643f);
-            GameObject.Find("GameManager").GetComponent<GameManager>().ChangeScene("4_Bottom");
-        }
-        if (col.gameObject.CompareTag("arrowMiddleToTop"))
-        {
-            // Position on Start Bottom Top Map
-            //target = new Vector2(6.039f, 0.315f);
-            GameObject.Find("GameManager").GetComponent<GameManager>().ChangeScene("2_Top");
-        }
-        if (col.gameObject.CompareTag("arrowBottomToMiddle"))
-        {
-            // Position on Start Bottom Middle Map
-            //target = new Vector2(6.048f, 0.315f);
-            GameObject.Find("GameManager").GetComponent<GameManager>().ChangeScene("3_Middle");
+            target = transform.position;
+            cluesFound += 1;
         }
     }
 }
