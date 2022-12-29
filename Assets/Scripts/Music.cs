@@ -14,4 +14,9 @@ public class Music : MonoBehaviour
         _music = this;
         DontDestroyOnLoad(this);
     }
+
+    private void Update()
+    {
+        if (PauseMenu.returnToMainMenu) Destroy(gameObject);
+    }
 }

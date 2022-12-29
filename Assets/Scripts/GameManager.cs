@@ -16,12 +16,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(_sceneName);
     }
-    
-    public void Restart()
-    {
-        
-    }
-    
+
     public void Quit()
     {
         Application.Quit();

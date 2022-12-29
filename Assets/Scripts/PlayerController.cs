@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     private void Walk()
     {
         Vector2 mousPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (Input.GetMouseButtonDown(0) && !isHappy)
+        if (Input.GetMouseButtonDown(0) && !isHappy && !PauseMenu.isPaused)
         {
             GetComponent<SpriteRenderer>().flipX = mousPos.x <= target.x;
             target = mousPos;

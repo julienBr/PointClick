@@ -6,7 +6,7 @@ public class GameUI : MonoBehaviour
     private static GameUI _gameUI;
     [SerializeField] private TMP_Text cluesFoundText;
     
-    private void Awake()
+    /*private void Awake()
     {
         if (_gameUI != null && _gameUI != this)
         {
@@ -15,7 +15,7 @@ public class GameUI : MonoBehaviour
         }
         _gameUI = this;
         DontDestroyOnLoad(this);
-    }
+    }*/
 
     private void Update()
     {
@@ -24,6 +24,7 @@ public class GameUI : MonoBehaviour
 
     private void UpdateClues()
     {
+        if (PauseMenu.returnToMainMenu) PlayerController.cluesFound = 0;
         cluesFoundText.text = "Clues Found : " + PlayerController.cluesFound + " / 7";
     }
 }
