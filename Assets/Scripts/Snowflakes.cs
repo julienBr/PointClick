@@ -14,4 +14,9 @@ public class Snowflakes : MonoBehaviour
         _snowFlakes = this;
         DontDestroyOnLoad(this);
     }
+    
+    private void Update()
+    {
+        if (PauseMenu.returnToMainMenu) Destroy(gameObject);
+    }
 }
