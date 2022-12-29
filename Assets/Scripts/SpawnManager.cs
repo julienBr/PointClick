@@ -16,7 +16,7 @@ public class SpawnManager : MonoBehaviour
         currentScene = gameObject.scene.name;
         if (currentScene == "2_Top" && previousScene == "3_Middle")
         {
-            posPlayer = new Vector3(6.039f, 0.315f,0f);
+            posPlayer = new Vector3(6.039f, 0.315f, 0f);
             player.position = posPlayer;
         }
 
