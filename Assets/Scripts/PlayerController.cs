@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 mousPos;
     private Vector2 target;
     private Animator _animator;
-    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] public AudioSource _audioSource;
     private float perspectiveScale = 0.05f;
     private float scaleRatio = 7f;
     private Vector3 _scale;

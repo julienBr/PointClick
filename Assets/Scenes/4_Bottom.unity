@@ -971,6 +971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeTransition: {fileID: 1342125920}
   buttonPaused: {fileID: 68565871}
+  player: {fileID: 942092940}
 --- !u!1 &939435324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,6 +1178,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4487330274023228231, guid: b2390f990a2dc0a40a533c3a80e431c4, type: 3}
   m_PrefabInstance: {fileID: 942092938}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &942092940 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6278062857101222447, guid: b2390f990a2dc0a40a533c3a80e431c4, type: 3}
+  m_PrefabInstance: {fileID: 942092938}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 376c73d774fde2e48a042e0a90d93b57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &991150703
 GameObject:
   m_ObjectHideFlags: 0
