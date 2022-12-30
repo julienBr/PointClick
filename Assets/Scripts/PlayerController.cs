@@ -8,15 +8,19 @@ public class PlayerController : MonoBehaviour
     private Vector2 mousPos;
     private Vector2 target;
     private Animator _animator;
+    [SerializeField] private AudioSource _audioSource;
     private float perspectiveScale = 0.05f;
     private float scaleRatio = 7f;
     private Vector3 _scale;
     public static int cluesFound;
     private bool isHappy;
+    [SerializeField] private AudioClip happy;
     
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
+        happy = GetComponent<AudioClip>();
         Vector3 _scale = transform.localScale;
     }
 
@@ -34,6 +38,7 @@ public class PlayerController : MonoBehaviour
             GetComponent<SpriteRenderer>().flipX = mousPos.x <= target.x;
             target = mousPos;
             _animator.SetBool("Walk", true);
+            _audioSource.Play();
             StartCoroutine(Move());
         }
     }
@@ -54,6 +59,7 @@ public class PlayerController : MonoBehaviour
             yield return null;
         } while (transform.position.x != target.x && transform.position.y != target.y);
         _animator.SetBool("Walk", false);
+        _audioSource.Stop();
     }
     
     private void RescalePlayerDistance()
@@ -81,7 +87,7 @@ public class PlayerController : MonoBehaviour
         target = transform.position;
         cluesFound += 1;
         _animator.SetBool("Happy", true);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         _animator.SetBool("Happy", false);
         isHappy = false;
     }

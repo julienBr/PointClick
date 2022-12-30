@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    [SerializeField] private FadeTransition fadeTransition;
     public static bool isPaused;
     public static bool returnToMainMenu;
     [SerializeField] private GameObject buttonPaused;
@@ -37,6 +38,7 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMainMenu()
     {
+        fadeTransition.ThrowFade();
         returnToMainMenu = true;
         GameResume();
         SceneManager.LoadScene("1_Start");

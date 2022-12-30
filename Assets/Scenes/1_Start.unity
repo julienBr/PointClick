@@ -2720,7 +2720,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1262732395}
   - component: {fileID: 1262732396}
-  - component: {fileID: 1262732397}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2756,19 +2755,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeTransition: {fileID: 1124385519}
---- !u!114 &1262732397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1262732394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c31e1c8d1c239ef4885adecf034e66a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonPaused: {fileID: 0}
 --- !u!1 &1285575922
 GameObject:
   m_ObjectHideFlags: 0
@@ -2956,7 +2942,7 @@ AudioSource:
   m_GameObject: {fileID: 1306811046}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: e576ae98f2a98cc4eaac8b247f136779, type: 2}
   m_audioClip: {fileID: 8300000, guid: 5238fcc6fc0996441aeab06cec2c8d13, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1

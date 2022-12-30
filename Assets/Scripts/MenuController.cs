@@ -38,12 +38,7 @@ public class MenuController : MonoBehaviour
     {
         OpenOnePanel(_type, true);
     }
-    
-    public void Restart()
-    {
-        
-    }
-    
+
     public void Quit()
     {
         manager.Quit();

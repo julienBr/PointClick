@@ -969,6 +969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c31e1c8d1c239ef4885adecf034e66a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeTransition: {fileID: 1342125920}
   buttonPaused: {fileID: 68565871}
 --- !u!1 &939435324
 GameObject:

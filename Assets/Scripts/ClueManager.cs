@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ClueManager : MonoBehaviour
 {
-    public static ClueManager _clueManager;
+    private static ClueManager _clueManager;
     public static List<string> clueList = new();
     private void Awake()
     {
@@ -25,6 +25,12 @@ public class ClueManager : MonoBehaviour
                 GameObject _clue = GameObject.Find(clue);
                 if(_clue != null) _clue.SetActive(false);
             }
+        }
+
+        if (PauseMenu.returnToMainMenu)
+        {
+            clueList.Clear();
+            Destroy(gameObject);
         }
     }
 }
