@@ -14,13 +14,11 @@ public class PlayerController : MonoBehaviour
     private Vector3 _scale;
     public static int cluesFound;
     private bool isHappy;
-    [SerializeField] private AudioClip happy;
     
     private void Awake()
     {
         _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
-        happy = GetComponent<AudioClip>();
         Vector3 _scale = transform.localScale;
     }
 

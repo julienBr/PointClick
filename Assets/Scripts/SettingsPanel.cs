@@ -27,11 +27,16 @@ public class SettingsPanel : MonoBehaviour
         resolutionDropdown.RefreshShownValue();
     }
 
-    public void SetVolume(float _volume)
+    public void SetMusicVolume(float _volume)
     {
-        audioMixer.SetFloat("Volume", _volume);
+        audioMixer.SetFloat("Music", _volume);
     }
 
+    public void SetSoundEffectVolume(float _volume)
+    {
+        audioMixer.SetFloat("SoundEffect", _volume);
+    }
+    
     public void SetFullScreen(bool _isFullScreen)
     {
         Screen.fullScreen = _isFullScreen;
