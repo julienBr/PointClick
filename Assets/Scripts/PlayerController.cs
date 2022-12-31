@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
-        Vector3 _scale = transform.localScale;
+        _scale = transform.localScale;
     }
 
     private void Update()
