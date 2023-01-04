@@ -21,13 +21,17 @@ public class MenuPanel : MonoBehaviour
     private void UpdateState(bool _animate)
     {
         StopAllCoroutines();
-        if (_animate) StartCoroutine(Animate(state));
-        else canvas.enabled = state;
+        if (_animate)
+        {
+            gameObject.SetActive(_animate);
+            StartCoroutine(Animate(state));
+        }
+        else gameObject.SetActive(state);//canvas.enabled = state;
     }
 
     private IEnumerator Animate(bool _state)
     {
-        canvas.enabled = true;
+        gameObject.SetActive(true);//canvas.enabled = true;
         float _t = _state ? 0 : 1;
         float _target = _state ? 1 : 0;
         int _factor = _state ? 1 : -1;
@@ -42,12 +46,13 @@ public class MenuPanel : MonoBehaviour
                 break;
             }
         }
-        canvas.enabled = _state;
+        gameObject.SetActive(_state);//canvas.enabled = _state;
     }
 
     public void ChangeState(bool _animate, bool _state)
     {
         state = _state;
+        gameObject.SetActive(state);
         UpdateState(_animate);
     }
     
