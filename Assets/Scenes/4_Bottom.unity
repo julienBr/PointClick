@@ -1666,6 +1666,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 376c73d774fde2e48a042e0a90d93b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &974108549
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 974108551}
+  - component: {fileID: 974108550}
+  m_Layer: 0
+  m_Name: Timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &974108550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974108549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c19f85d946e852d4a9417e14763ff79a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &974108551
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974108549}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.5904727, y: 3.3907475, z: 1.0348858}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &991150703
 GameObject:
   m_ObjectHideFlags: 0
@@ -2799,7 +2843,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1442035430}
-  - component: {fileID: 1442035431}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -2829,19 +2872,6 @@ RectTransform:
   m_AnchoredPosition: {x: 10, y: -50}
   m_SizeDelta: {x: 275, y: 50}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &1442035431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1442035429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c19f85d946e852d4a9417e14763ff79a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: {fileID: 1206209967}
 --- !u!1 &1528372327
 GameObject:
   m_ObjectHideFlags: 0
@@ -3377,6 +3407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91b63e7ce8869894ea3e590620bb6766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: {fileID: 1206209967}
   cluesFoundText: {fileID: 991150704}
   clue1: {fileID: 0}
   clue2: {fileID: 0}

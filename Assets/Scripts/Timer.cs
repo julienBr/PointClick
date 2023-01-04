@@ -1,14 +1,26 @@
-using TMPro;
 using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] private TMP_Text timer;
-    private float time;
+    private static Timer _timer;
+    public static float time;
 
+    private void Awake()
+    {
+        if (_timer != null && _timer != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        _timer = this;
+        DontDestroyOnLoad(this);
+        time = 0f;
+    }
+    
     private void Update()
     {
-        timer.text = $"{Mathf.Floor(time / 60):0}:{time % 60:00}";
         time += Time.deltaTime;
+        Debug.Log(time);
+        if (PauseMenu.returnToMainMenu) Destroy(gameObject);
     }
 }

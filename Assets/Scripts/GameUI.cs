@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class GameUI : MonoBehaviour
 {
+    [SerializeField] private TMP_Text timer;
     [SerializeField] private TMP_Text cluesFoundText;
     [SerializeField] private Image clue1;
     [SerializeField] private Image clue2;
@@ -16,6 +17,7 @@ public class GameUI : MonoBehaviour
     private void Update()
     {
         UpdateClues();
+        timer.text = $"{Mathf.Floor(Timer.time / 60):0}:{Timer.time % 60:00}";
         if (PauseMenu.returnToMainMenu) PlayerController.cluesFound = 0;
     }
 
