@@ -16,6 +16,13 @@ public class PauseMenu : MonoBehaviour
     {
         returnToMainMenu = false;
         isRestart = false;
+        
+    }
+
+    private void Start()
+    {
+        Time.timeScale = 1;
+        Debug.Log("TimeScale à 1");
     }
 
     private void Update()
@@ -51,6 +58,8 @@ public class PauseMenu : MonoBehaviour
         fadeTransition.ThrowFade();
         isRestart = true;
         SceneManager.LoadScene("2_Top");
+        Debug.Log("TimeScale : " + Time.timeScale);
+
     }
     
     public void OpenSettingsWindow()
