@@ -32,6 +32,11 @@ public class PauseMenu : MonoBehaviour
             if (isPaused) GameResume();
             else GamePaused();
         }
+        if (PlayerController.cluesFound == 1)
+        {
+            winWindow.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 
     private void GamePaused()
@@ -45,10 +50,10 @@ public class PauseMenu : MonoBehaviour
     
     public void GameResume()
     {
+        Time.timeScale = 1;
         player._audioSource.Play();
         buttonPaused.SetActive(false);
         winWindow.SetActive(false);
-        Time.timeScale = 1;
         isPaused = false;
     }
 
@@ -59,9 +64,9 @@ public class PauseMenu : MonoBehaviour
 
     private IEnumerator FadeRestart()
     {
+        GameResume();
         fadeTransition.ThrowFade();
         isRestart = true;
-        GameResume();
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("2_Top");
     }
@@ -83,9 +88,9 @@ public class PauseMenu : MonoBehaviour
 
     private IEnumerator MainMenu()
     {
+        GameResume();
         fadeTransition.ThrowFade();
         returnToMainMenu = true;
-        GameResume();
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("1_Start");
     }
