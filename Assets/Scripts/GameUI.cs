@@ -5,7 +5,6 @@ public class GameUI : MonoBehaviour
 {
     [SerializeField] private TMP_Text timer;
     [SerializeField] private TMP_Text cluesFoundText;
-    [SerializeField] private GameObject winWindow;
 
     private void Update()
     {

@@ -20,10 +20,10 @@ public class PauseMenu : MonoBehaviour
         
     }
 
-    private void Start()
+    /*private void Start()
     {
         Time.timeScale = 1;
-    }
+    }*/
 
     private void Update()
     {
@@ -59,12 +59,12 @@ public class PauseMenu : MonoBehaviour
 
     public void Restart()
     {
+        GameResume();
         StartCoroutine(FadeRestart());
     }
 
     private IEnumerator FadeRestart()
     {
-        GameResume();
         fadeTransition.ThrowFade();
         isRestart = true;
         yield return new WaitForSeconds(0.5f);
@@ -83,12 +83,12 @@ public class PauseMenu : MonoBehaviour
     
     public void LoadMainMenu()
     {
+        GameResume();
         StartCoroutine(MainMenu());
     }
 
     private IEnumerator MainMenu()
     {
-        GameResume();
         fadeTransition.ThrowFade();
         returnToMainMenu = true;
         yield return new WaitForSeconds(0.5f);
