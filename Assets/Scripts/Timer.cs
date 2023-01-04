@@ -20,6 +20,7 @@ public class Timer : MonoBehaviour
     private void Update()
     {
         time += Time.deltaTime;
-        if (PauseMenu.returnToMainMenu) Destroy(gameObject);
+        if (PauseMenu.returnToMainMenu || PauseMenu.isRestart) Destroy(gameObject);
+        Debug.Log(time);
     }
 }

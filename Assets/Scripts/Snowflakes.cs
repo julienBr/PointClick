@@ -17,6 +17,6 @@ public class Snowflakes : MonoBehaviour
     
     private void Update()
     {
-        if (PauseMenu.returnToMainMenu) Destroy(gameObject);
+        if (PauseMenu.returnToMainMenu || PauseMenu.isRestart) Destroy(gameObject);
     }
 }

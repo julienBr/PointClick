@@ -6,13 +6,16 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private FadeTransition fadeTransition;
     public static bool isPaused;
     public static bool returnToMainMenu;
+    public static bool isRestart;
     [SerializeField] private GameObject buttonPaused;
     [SerializeField] private GameObject settingsWindow;
+    [SerializeField] private GameObject winWindow;
     [SerializeField] private PlayerController player;
 
     private void Awake()
     {
         returnToMainMenu = false;
+        isRestart = false;
     }
 
     private void Update()
@@ -37,10 +40,19 @@ public class PauseMenu : MonoBehaviour
     {
         player._audioSource.Play();
         buttonPaused.SetActive(false);
+        winWindow.SetActive(false);
         Time.timeScale = 1;
         isPaused = false;
     }
 
+    public void Restart()
+    {
+        GameResume();
+        fadeTransition.ThrowFade();
+        isRestart = true;
+        SceneManager.LoadScene("2_Top");
+    }
+    
     public void OpenSettingsWindow()
     {
         settingsWindow.SetActive(true);
