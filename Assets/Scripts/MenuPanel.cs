@@ -28,8 +28,6 @@ public class MenuPanel : MonoBehaviour
     private IEnumerator Animate(bool _state)
     {
         canvas.enabled = true;
-        group.interactable = !_state;
-        group.blocksRaycasts = !_state;
         float _t = _state ? 0 : 1;
         float _target = _state ? 1 : 0;
         int _factor = _state ? 1 : -1;
@@ -41,8 +39,6 @@ public class MenuPanel : MonoBehaviour
             if ((state && _t >= _target) || (!state && _t <= _target))
             {
                 group.alpha = _target;
-                group.interactable = _state;
-                group.blocksRaycasts = _state;
                 break;
             }
         }
