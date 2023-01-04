@@ -21,6 +21,5 @@ public class Timer : MonoBehaviour
     {
         time += Time.deltaTime;
         if (PauseMenu.returnToMainMenu || PauseMenu.isRestart) Destroy(gameObject);
-        Debug.Log(time);
     }
 }

@@ -27,7 +27,7 @@ public class ClueManager : MonoBehaviour
             }
         }
 
-        if (PauseMenu.returnToMainMenu)
+        if (PauseMenu.returnToMainMenu || PauseMenu.isRestart)
         {
             clueList.Clear();
             Destroy(gameObject);

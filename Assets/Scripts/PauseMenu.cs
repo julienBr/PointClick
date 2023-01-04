@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -22,7 +23,6 @@ public class PauseMenu : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1;
-        Debug.Log("TimeScale à 1");
     }
 
     private void Update()
@@ -54,12 +54,16 @@ public class PauseMenu : MonoBehaviour
 
     public void Restart()
     {
-        GameResume();
+        StartCoroutine(FadeRestart());
+    }
+
+    private IEnumerator FadeRestart()
+    {
         fadeTransition.ThrowFade();
         isRestart = true;
+        GameResume();
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("2_Top");
-        Debug.Log("TimeScale : " + Time.timeScale);
-
     }
     
     public void OpenSettingsWindow()
@@ -74,9 +78,15 @@ public class PauseMenu : MonoBehaviour
     
     public void LoadMainMenu()
     {
+        StartCoroutine(MainMenu());
+    }
+
+    private IEnumerator MainMenu()
+    {
         fadeTransition.ThrowFade();
         returnToMainMenu = true;
         GameResume();
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("1_Start");
     }
 }
