@@ -44,13 +44,7 @@ public class MenuPanel : MonoBehaviour
         }
         canvas.enabled = _state;
     }
-    
-    public void ChangeState(bool _animate)
-    {
-        state = !state;
-        UpdateState(_animate);
-    }
-    
+
     public void ChangeState(bool _animate, bool _state)
     {
         state = _state;
