@@ -2054,7 +2054,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 1341381569}
   cluesFoundText: {fileID: 947848929}
-  winWindow: {fileID: 1700669436}
 --- !u!1 &798020632
 GameObject:
   m_ObjectHideFlags: 0
@@ -2164,7 +2163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9051307303034462918, guid: 5b3c14f476ad8c640b26a2b49ff43333, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9051307303034462937, guid: 5b3c14f476ad8c640b26a2b49ff43333, type: 3}
       propertyPath: m_Pivot.x
@@ -3865,7 +3864,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1700669437
 RectTransform:
   m_ObjectHideFlags: 0
