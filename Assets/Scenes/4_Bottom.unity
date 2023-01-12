@@ -3369,7 +3369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3273706647443163291, guid: 8a1c41e19e373fe4f961eee9d6e70478, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a1c41e19e373fe4f961eee9d6e70478, type: 3}
@@ -4207,7 +4207,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 1206209967}
   cluesFoundText: {fileID: 991150704}
-  winWindow: {fileID: 511684663}
 --- !u!114 &1976146936
 MonoBehaviour:
   m_ObjectHideFlags: 0

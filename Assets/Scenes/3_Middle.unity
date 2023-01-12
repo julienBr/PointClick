@@ -1750,7 +1750,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 447744137}
   cluesFoundText: {fileID: 474624248}
-  winWindow: {fileID: 1080428853}
 --- !u!114 &725063819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3987,7 +3986,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3273706647443163291, guid: 8a1c41e19e373fe4f961eee9d6e70478, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a1c41e19e373fe4f961eee9d6e70478, type: 3}
