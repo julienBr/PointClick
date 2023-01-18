@@ -1916,6 +1916,10 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3273706646814857578, guid: 8a1c41e19e373fe4f961eee9d6e70478, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3273706646814857579, guid: 8a1c41e19e373fe4f961eee9d6e70478, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
@@ -1974,7 +1978,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3273706647443163291, guid: 8a1c41e19e373fe4f961eee9d6e70478, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3273706647941041842, guid: 8a1c41e19e373fe4f961eee9d6e70478, type: 3}
       propertyPath: m_Layer
