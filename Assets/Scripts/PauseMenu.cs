@@ -27,7 +27,7 @@ public class PauseMenu : MonoBehaviour
             if (isPaused) GameResume();
             else GamePaused();
         }
-        if (PlayerController.cluesFound == 1)
+        if (PlayerController.cluesFound == 7)
         {
             winWindow.SetActive(true);
             Time.timeScale = 0;
