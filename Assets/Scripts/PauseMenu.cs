@@ -20,11 +20,6 @@ public class PauseMenu : MonoBehaviour
         
     }
 
-    /*private void Start()
-    {
-        Time.timeScale = 1;
-    }*/
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && gameObject.scene.name != "1_Start")
